@@ -25,4 +25,5 @@
     <string name="txtDescricao">Descrição:</string>
     <string name="hintNome">Nome</string>
     <string name="hintDescricao">Descrição</string>
+    <string name="filmeFoto">Imagem do Filme</string>
 </resources>

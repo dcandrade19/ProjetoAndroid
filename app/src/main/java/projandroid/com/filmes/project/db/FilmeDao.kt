@@ -1,9 +1,7 @@
 package projandroid.com.filmes.project.db
 
 import android.arch.lifecycle.LiveData
-import android.arch.persistence.room.Dao
-import android.arch.persistence.room.Insert
-import android.arch.persistence.room.Query
+import android.arch.persistence.room.*
 
 @Dao
 interface FilmeDao {
@@ -16,4 +14,10 @@ interface FilmeDao {
 
     @Query("SELECT * FROM filmes")
     fun getAll():LiveData<List<Filme>>
+
+    @Delete
+    fun delete(filme: Filme)
+
+    @Update
+    fun update(filme: Filme)
 }

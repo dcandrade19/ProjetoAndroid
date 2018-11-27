@@ -11,4 +11,12 @@ class FilmeRepository(private val filmeDAO: FilmeDao) {
     fun insert(filme: Filme) {
         filmeDAO.insert(filme)
     }
+
+    fun delete(filme: Filme) {
+        filmeDAO.delete(filme)
+    }
+
+    fun update(filme: Filme) {
+        filmeDAO.update(filme)
+    }
 }

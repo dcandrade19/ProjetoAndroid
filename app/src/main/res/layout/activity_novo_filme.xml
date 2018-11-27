@@ -37,6 +37,18 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_add_a_photo_new_24dp" />
 
+        <EditText
+            android:id="@+id/etId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/imgNovoFilme"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
         <TextView
             android:id="@+id/txtNome"
             android:layout_width="wrap_content"

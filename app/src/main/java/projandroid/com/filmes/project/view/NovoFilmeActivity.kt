@@ -14,6 +14,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_novo_filme.*
+import kotlinx.android.synthetic.main.item_lista_filme.*
 import projandroid.com.filmes.R
 import projandroid.com.filmes.project.db.Filme
 
@@ -21,6 +22,7 @@ class NovoFilmeActivity : AppCompatActivity() {
 
     private var image_uri : Uri? = null
     private var mCurrentPhotoPath: String = ""
+    private var filmeSelecionado: Filme? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +37,20 @@ class NovoFilmeActivity : AppCompatActivity() {
                 menu.add(Menu.NONE, 2, Menu.NONE, "Tirar foto")
             }
         }
+
+       try {
+            var intent: Intent = intent
+
+            filmeSelecionado = intent.getSerializableExtra(EXTRA_REPLY) as Filme
+            filmeSelecionado.let {
+                etId.setText(filmeSelecionado!!.id.toString())
+                etNome.setText(filmeSelecionado!!.nome)
+                etDescricao.setText(filmeSelecionado!!.descricao)
+            }
+        } catch(e: Exception) {
+            filmeSelecionado = null
+        }
+
     }
 
     private fun pickImageFromGallery() {
@@ -154,6 +170,9 @@ class NovoFilmeActivity : AppCompatActivity() {
                     Toast.makeText(this, "Insira o nome do filme!", Toast.LENGTH_LONG).show()
                 }else{
                     val filme = Filme(nome = etNome.text.toString(), descricao = etDescricao.text.toString())
+                    if(filmeSelecionado != null) {
+                        filme.id = filmeSelecionado!!.id
+                    }
                     val replyIntent = Intent()
                     replyIntent.putExtra(EXTRA_REPLY, filme)
                     setResult(Activity.RESULT_OK, replyIntent)
