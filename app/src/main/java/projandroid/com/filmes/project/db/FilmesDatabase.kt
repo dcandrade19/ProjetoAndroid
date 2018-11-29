@@ -10,7 +10,7 @@ import kotlinx.coroutines.experimental.Dispatchers
 import kotlinx.coroutines.experimental.IO
 import kotlinx.coroutines.experimental.launch
 
-@Database(entities = [Filme::class], version = 3)
+@Database(entities = [Filme::class], version = 7)
 abstract class FilmesDatabase: RoomDatabase() {
 
     abstract fun filmeDAO():FilmeDao

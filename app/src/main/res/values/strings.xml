@@ -26,4 +26,6 @@
     <string name="hintNome">Nome</string>
     <string name="hintDescricao">Descrição</string>
     <string name="filmeFoto">Imagem do Filme</string>
+    <string name="anoLancamento">Ano de Lançamento</string>
+    <string name="duracao">Duração</string>
 </resources>

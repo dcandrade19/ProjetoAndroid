@@ -34,7 +34,7 @@ class ListaFilmeActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
 
         adapter.onItemClick = {
-            Toast.makeText(this, "${it.nome} selecionado!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "${it.nome} selecionado!", Toast.LENGTH_SHORT).show()
             filmeSelecionado = it
         }
 
